@@ -5,11 +5,9 @@
 \XeTeXgenerateactualtext=1
 
 % Layout and Appearance
-\documentclass[12pt, letterpaper]{scrartcl}
-\usepackage[margin=1in]{geometry}
-\parindent=0.5in
+\documentclass[12pt, parskip=full, letterpaper]{scrartcl}
+\parindent=1.5em
 \usepackage{libertinus}
-\usepackage[nodisplayskipstretch]{setspace}
 \usepackage[american]{babel}
 \usepackage[en-US]{datetime2}
 \DTMlangsetup[en-US]{ord=raise}
@@ -20,7 +18,7 @@
 \addbibresource{references.bib}
 
 % Quotations
-\usepackage[indentfirst=false, leftmargin=0.5in]{quoting}
+\usepackage[indentfirst=false, leftmargin=1.5em]{quoting}
 \usepackage[threshold=1]{csquotes}
 \SetBlockEnvironment{quoting}
 \SetCiteCommand{\autocite}
