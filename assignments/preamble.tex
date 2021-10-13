@@ -1,0 +1,35 @@
+%!TeX program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% Generate text that can be copy-pasted
+\XeTeXgenerateactualtext=1
+
+% Layout and Appearance
+\documentclass[12pt, letterpaper]{scrartcl}
+\usepackage[margin=1in]{geometry}
+\parindent=0.5in
+\usepackage{libertinus}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage[american]{babel}
+\usepackage[en-US]{datetime2}
+\DTMlangsetup[en-US]{ord=raise}
+\usepackage{lettrine}
+
+% Bibliography
+\usepackage[style=mla, backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Quotations
+\usepackage[indentfirst=false, leftmargin=0.5in]{quoting}
+\usepackage[threshold=1]{csquotes}
+\SetBlockEnvironment{quoting}
+\SetCiteCommand{\autocite}
+
+% References
+\usepackage{hyperref}
+\hypersetup{
+unicode=true,
+pdfstartview={FitH},
+colorlinks=true,
+citecolor=blue,
+}
