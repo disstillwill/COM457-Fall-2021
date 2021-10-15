@@ -1,24 +1,49 @@
-%!TeX program = xelatex
-%!TEX encoding = UTF-8 Unicode
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
 
 % Generate text that can be copy-pasted
 \XeTeXgenerateactualtext=1
 
-% Layout and Appearance
 \documentclass[12pt, parskip=full, letterpaper]{scrartcl}
-\parindent=1.5em
+
+% Toggle draft mode
+\usepackage{etoolbox}
+\newtoggle{draft}
+% \toggletrue{draft}
+\togglefalse{draft}
+
+% Config variables
+\newcommand{\indentvalue}{1.5em}
+
+% Layout and Appearance
 \usepackage{libertinus}
+\usepackage{lettrine}
 \usepackage[american]{babel}
 \usepackage[en-US]{datetime2}
 \DTMlangsetup[en-US]{ord=raise}
-\usepackage{lettrine}
+\parindent=\indentvalue
+\iftoggle{draft}{
+    % Drafts use 1 inch margins and double spacing on body text
+    \usepackage[margin=1in]{geometry}
+    \usepackage[nodisplayskipstretch, doublespacing]{setspace}
+    \addtokomafont{titlehead}{\setstretch{1}}
+    \addtokomafont{subject}{\setstretch{1}}
+    \addtokomafont{title}{\setstretch{1}}
+    \addtokomafont{subtitle}{\setstretch{1}}
+    \addtokomafont{author}{\setstretch{1}}
+    \addtokomafont{date}{\setstretch{1}}
+    \addtokomafont{publishers}{\setstretch{1}}
+    \setcounter{DefaultLines}{2}
+}{
+    \setcounter{DefaultLines}{3}
+}
 
 % Bibliography
 \usepackage[style=mla, backend=biber]{biblatex}
 \addbibresource{references.bib}
 
 % Quotations
-\usepackage[indentfirst=false, leftmargin=1.5em]{quoting}
+\usepackage[indentfirst=false, leftmargin=\indentvalue]{quoting}
 \usepackage[threshold=1]{csquotes}
 \SetBlockEnvironment{quoting}
 \SetCiteCommand{\autocite}
