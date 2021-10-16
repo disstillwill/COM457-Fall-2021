@@ -4,7 +4,7 @@
 % Generate text that can be copy-pasted
 \XeTeXgenerateactualtext=1
 
-\documentclass[12pt, parskip=full, letterpaper]{scrartcl}
+\documentclass[12pt, parskip=false, letterpaper]{scrartcl}
 
 % Toggle draft mode
 \usepackage{etoolbox}
@@ -43,7 +43,7 @@
 \addbibresource{references.bib}
 
 % Quotations
-\usepackage[indentfirst=false, leftmargin=\indentvalue]{quoting}
+\usepackage[indentfirst=false, leftmargin=\indentvalue, font=small]{quoting}
 \usepackage[threshold=1]{csquotes}
 \SetBlockEnvironment{quoting}
 \SetCiteCommand{\autocite}
